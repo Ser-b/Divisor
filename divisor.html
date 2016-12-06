@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1>Определение делителей числа:</h1>
+<input type="text" id="number" placeholder="Введите число"><button id="btn">Рассчитать</button>
+	<script>
+	var but = document.getElementById('btn');
+	but.onclick = function(event) {
+		var input = document.getElementById('number');
+		var num = parseInt(input.value);
+		var del = [];
+		for (i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
+		if (num % i == 0) {
+	  		del.push(i);
+	    	if (num/i !== i) {
+	    		del.push(num/i);
+	   		}
+	  	} 
+	}
+	if (del.length > 0) {
+		alert('Делитель числа ' + num + ': ' + del);
+	}
+	else {
+		alert('Перед вами простое число' + del);
+	}
+	}
+	
+	</script>
+</body>
+</html>
